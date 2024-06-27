@@ -1,0 +1,15 @@
+# ninja log v6
+15660	15860	7411875092106711	lib/libgmockd.a	651995bad39b173
+51	2051	7411874936015071	sorts/CMakeFiles/sorts.dir/sorts.cpp.obj	4f3c78575e2fe15
+15676	15805	7411875092256721	lib/libgtest_maind.a	d7737988bd18e81
+2053	2400	7411874956028801	sorts/libsorts.a	5a1608a8f3f43434
+61	7098	7411874936105202	_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj	df21f92d0553f03e
+70	3486	7411874936204450	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	41122a1612df01b9
+88	4569	7411874936384504	tests/CMakeFiles/sort_test.dir/sortingtest.cpp.obj	ce3a2c6ee7ba57e1
+15261	15660	7411875088115784	lib/libgtestd.a	ca9a8d34e28e2f78
+79	7605	7411874936294481	CMakeFiles/Kartinka.dir/main.cpp.obj	a7ac8b3ff4564fcf
+97	3760	7411874936474515	_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj	23f3a7e15b86787a
+15805	16192	7411875093557413	tests/sort_test.exe	72095ec13ee3d28c
+7605	7765	7411875011544465	Kartinka.exe	216dcf5ab463f350
+15860	15956	7411875094097505	lib/libgmock_maind.a	8b335d0057ee3dff
+38	15260	7411874935876537	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	28827802412e6e42
