@@ -2,9 +2,10 @@
 #include <list>
 #include <vector>
 
-#include "C:/Users/vudov/OneDrive/Документы/GitHub/cpp_project_tests/sorts/sorts.h"
-
+// #include "C:\Users\USER\Documents\cloudfact\cpp_project_tests\sorts\sorts.h"
+#include "..\sorts\sorts.h"
 #include <gtest/gtest.h>
+
 TEST(SortingTests, TestselectionSort)
 {
     std::vector<std::pair<int, int>> iterS1;
@@ -19,6 +20,7 @@ TEST(SortingTests, TestselectionSort)
         ASSERT_EQ(listUnSorted[i], listSorted[i]);
     }
 }
+
 TEST(SortingTests, TestinsertSort)
 {
     std::vector<std::pair<int, int>> iterS2;
