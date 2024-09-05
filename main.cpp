@@ -1162,10 +1162,23 @@ him[99].loadFromFile("../images/100.png");
     cocktailSort(listXS4, 100, iterS4);
     gnome_sort(listXS5, 100, iterS5);
     quickSort(listXS6, 0, 99, iterS6);
-    odd_even_sort(listXS7, 100, iterS7);
+    int slo_test = 0;
+    std::cout<<"before sort ";
+    for (slo_test =0 ; slo_test < 100; slo_test++){
+        std::cout<<listXS7[slo_test] << " "; 
+    }
+
+    slow_sort(listXS7, 0, 99, iterS7);
+    std::cout<< std::endl;
+    std::cout<<"after sort ";
+    for (slo_test =0 ; slo_test < 100; slo_test++){
+        std::cout<<listXS7[slo_test] << " "; 
+    }
+
     //mergeSort(listXS8,0, 99, iterS8, iterS8Copy, listXS8Res, listYS8Res);
     stooge_sort(listXS8, 0, 99, iterS8);
     ShellSort(100, listXS9, iterS9);
+
 #pragma endregion
 //Визуализация сортировки
 #pragma region VisualisationOfSort
@@ -1210,7 +1223,7 @@ him[99].loadFromFile("../images/100.png");
     textS5.setPosition(50 + 4 * xx, 50 + 22 * yy);
     Text textS6;
     textS6.setFont(font);
-    textS6.setString("Odd-even sort");
+    textS6.setString("Slow sort");
     textS6.setCharacterSize(20);
     textS6.setFillColor(Color::Black);
     textS6.setStyle(sf::Text::Bold | sf::Text::Underlined);
