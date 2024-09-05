@@ -1273,9 +1273,10 @@ him[99].loadFromFile("../images/100.png");
         Window.draw(textS8);
         for (int S = 0; S < 9; S++) {
                 for (int i = 0; i < 100; i++) {
-
-                    arraySprite[S][i].setPosition(listX[S][i], listY[S][i]);
-                    Window.draw(arraySprite[S][i]);
+                    if (S != 4){
+                        arraySprite[S][i].setPosition(listX[S][i], listY[S][i]);
+                        Window.draw(arraySprite[S][i]);
+                    }
                 }
         }
         Event event;
@@ -1315,13 +1316,6 @@ him[99].loadFromFile("../images/100.png");
                     std::swap(listY[3][iterS4[x].first], listY[3][iterS4[x].second]);
                 }
                 x++;
-            }
-            if (l < iterS5.size()) {
-                if (iterS5[l].first != -1) {
-                    std::swap(listX[4][iterS5[l].first], listX[4][iterS5[l].second]);
-                    std::swap(listY[4][iterS5[l].first], listY[4][iterS5[l].second]);
-                }
-                l++;
             }
             if (z < iterS6.size()) {
                 if (iterS6[z].first != -1) {
