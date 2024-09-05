@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/sort_test.dir/sortingtest.cpp.o -o sort_test  ../sorts/libsorts.a ../lib/libgtest_main.a ../lib/libgtest.a

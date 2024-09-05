@@ -3,19 +3,6 @@
 #include <vector>
 
 
-//Свапы
-/// \brief Функция перемены местами
-void swap(double* a, double* b) {
-    double temp = *a;
-    *a = *b;
-    *b = temp;
-}
-/// \brief Функция перемены значениями
-void swapint(int* a, int* b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
 /// \brief Сортировка выбором
 /// \brief Выбираем минимальный элемент -> переносим его в начало
 /// \param num - рандомное распределение
@@ -29,14 +16,14 @@ void selectionSort(double* num, int size, std::vector <std::pair <int, int > >& 
         min = i; 
         for (int j = i + 1; j < size; j++) 
         {   
-            vec.emplace_back(std::pair<int, int>(-1, -1));
+            vec.emplace_back(-1, -1);
             if (num[j] < num[min]) {
                 min = j;
             }
         }
         if (min == i) continue;  
-        swap(&num[i], &num[min]);
-        vec.emplace_back(std::pair<int, int>(i, min));
+        std::swap(num[i], num[min]);
+        vec.emplace_back(i, min);
 
     }
 }
@@ -48,8 +35,8 @@ void selectionSort(double* num, int size, std::vector <std::pair <int, int > >& 
 void insertSort(double* arr, int n, std::vector <std::pair <int, int > >& vec) {
     for (int i = 1; i < n; i++) {
         for (int j = i; j > 0 && arr[j - 1] > arr[j]; j--) {
-            vec.emplace_back(std::pair<int, int>(j, j-1));
-            swap(&arr[j-1], &arr[j]);
+            vec.emplace_back(j, j-1);
+            std::swap(arr[j-1], arr[j]);
         }
     }
 }
@@ -67,11 +54,11 @@ void bubbleSort(double* arr, int size, std::vector <std::pair <int, int > >& vec
         {
             if (arr[j + 1] < arr[j])
             {
-                vec.emplace_back(std::pair<int, int>(j, j + 1));
-                swap(&arr[j], &arr[j + 1]);
+                vec.emplace_back(j, j + 1);
+                std::swap(arr[j], arr[j + 1]);
             }
             else
-                vec.emplace_back(std::pair<int, int>(-1, -1));
+                vec.emplace_back(1, -1);
         }
     }
 }
@@ -87,12 +74,12 @@ void cocktailSort(double* arr, int n, std::vector <std::pair <int, int > >& vec)
         flag = false;
         for (int i = start; i < end; i++) { //scan from left to right as bubble sort
             if (arr[i] > arr[i + 1]) {
-                vec.emplace_back(std::pair<int, int>(i, i + 1));
-                swap(&arr[i], &arr[i + 1]);
+                vec.emplace_back(i, i + 1);
+                std::swap(arr[i], arr[i + 1]);
                 flag = true;
             }
             else
-                vec.emplace_back(std::pair<int, int>(-1, -1));
+                vec.emplace_back(1, -1);
         }
         if (!flag) { //if nothing has changed simply break the loop
             break;
@@ -101,12 +88,12 @@ void cocktailSort(double* arr, int n, std::vector <std::pair <int, int > >& vec)
         end--; //decrease the end pointer
         for (int i = end - 1; i >= start; i--) { //scan from right to left
             if (arr[i] > arr[i + 1]) {
-                vec.emplace_back(std::pair<int, int>(i, i + 1));
-                swap(&arr[i],&arr[i + 1]);
+                vec.emplace_back(i, i + 1);
+                std::swap(arr[i],arr[i + 1]);
                 flag = true;
             }
             else
-                vec.emplace_back(std::pair<int, int>(-1, -1));
+                vec.emplace_back(1, -1);
         }
         start++;
     }
@@ -125,15 +112,15 @@ int partition(double* a, int p, int r, std::vector <std::pair <int, int > >& vec
             tmp = *(a + i);
             *(a + i) = *(a + j);
             *(a + j) = tmp;
-            vec.emplace_back(std::pair<int, int>(i, j));
+            vec.emplace_back(i, j);
         }
         else
-            vec.emplace_back(std::pair<int, int>(-1, -1));
+            vec.emplace_back(1, -1);
     }
     tmp = *(a + r);
     *(a + r) = *(a + i + 1);
     *(a + i + 1) = tmp;
-    vec.emplace_back(std::pair<int, int>(r, i+1));
+    vec.emplace_back(r, i+1);
     return i + 1;
 }
 /// \brief Быстрая сортировка
@@ -149,91 +136,7 @@ void quickSort(double* a, int p, int r, std::vector <std::pair <int, int > >& ve
         quickSort(a, q + 1, r, vec);
     }
 }
-//КРУГОВАЯ СОРТИРОВКА
-/// \brief Круговая сортировка
-/// \param arr - рандомное распределение
-/// \param n - размер arr
-/// \param vec - вектор, хранящий все итерации, чтобы впоследствии их визуализировать
-int circlesort(double* arr, int lo, int hi, int swaps, std::vector <std::pair <int, int > >& vec) {
-    if (lo == hi) {
-        return swaps;
-    }
-    int high = hi;
-    int low = lo;
-    int mid = (high - low) / 2;
-    while (lo < hi) {
-        if (arr[lo] > arr[hi]) {
-            vec.emplace_back(std::pair<int, int>(lo, hi));
-            swap(&arr[lo], &arr[hi]);
-            swaps++;
-        }
-        vec.emplace_back(std::pair<int, int>(-1, -1));
-        lo++;
-        hi--;
-    }
 
-    if (lo == hi) {
-        if (arr[lo] > arr[hi + 1]) {
-            vec.emplace_back(std::pair<int, int>(lo, hi+1));
-            swap(&arr[lo], &arr[hi+1]);
-            swaps++;
-        }
-    }
-    vec.emplace_back(std::pair<int, int>(-1, -1));
-    swaps = circlesort(arr, low, low + mid, swaps, vec);
-    swaps = circlesort(arr, low + mid + 1, high, swaps, vec);
-    return swaps;
-}
-
-void circlesortDriver(double* arr, int n, std::vector <std::pair <int, int > >& vec) {
-    do {
-    } while (circlesort(arr, 0, n - 1, 0, vec));
-}
-//СОРТИРОВКА СЛИЯННИЕМ
-void mergeSort(double* a, int l, int r, std::vector <std::pair <int, int > >& vec, std::vector <std::pair <double, double > >& vec1, double*X, double*Y)
-{
-    if (l == r) return; // границы сомкнулись
-    int mid = (l + r) / 2; // определяем середину последовательности
-    // и рекурсивно вызываем функцию сортировки для каждой половины
-    mergeSort(a, l, mid, vec, vec1, X, Y);
-    mergeSort(a, mid + 1, r, vec, vec1, X, Y);
-    int i = l;  // начало первого пути
-    int j = mid + 1; // начало второго пути
-    double* tmpX = (double*)std::malloc(r * sizeof(double));
-    double* tmpY = (double*)std::malloc(r * sizeof(double));
-    double* tmp = (double*)std::malloc(r * sizeof(double)); // дополнительный массив
-    int s = vec1.size();
-    for (int step = 0; step < r - l + 1; step++) // для всех элементов дополнительного массива
-    {
-        // записываем в формируемую последовательность меньший из элементов двух путей
-        // или остаток первого пути если j > r
-        if ((j > r) || ((i <= mid) && (a[i] < a[j])))
-        {
-            tmp[step] = a[i];
-            tmpX[step] = X[i];
-            tmpY[step] = Y[i];
-            vec1.emplace_back(std::pair<int, int>(X[i], Y[i]));
-            i++;
-        }
-        else
-        {
-            tmpX[step] = X[j];
-            tmpY[step] = Y[j];
-            vec1.emplace_back(std::pair<int, int>(X[j], Y[j]));
-            tmp[step] = a[j];
-            j++;
-        }
-    }
-    // переписываем сформированную последовательность в исходный массив
-    for (int step = 0; step < r - l + 1; step++) {
-        X[l + step] = tmpX[step];
-        Y[l + step] = tmpY[step];
-        vec.emplace_back(std::pair<int, int>(s + step, l + step));
-        a[l + step] = tmp[step];
-
-    }
- 
-}
 //СОРТИРОВКА ШЕЛЛА
 void ShellSort(int length, double* arr, std::vector <std::pair <int, int > >& vec)
 {
@@ -245,13 +148,103 @@ void ShellSort(int length, double* arr, std::vector <std::pair <int, int > >& ve
             {
                 if (arr[j] > arr[j + step])                 // Сравниваем элементы
                 {
-                    swap(&arr[j], &arr[j + step]);
-                    vec.emplace_back(std::pair<int, int>(j, j + step));
+                    std::swap(arr[j], arr[j + step]);
+                    vec.emplace_back(j, j + step);
                 }
                 else {
-                    vec.emplace_back(std::pair<int, int>(-1, -1));
+                    vec.emplace_back(1, -1);
                 }
             }
         }
     }
+}
+
+
+void gnome_sort(double *arr, int size , std::vector<std::pair<int, int>> &vec)
+{
+    int i = 1;
+    int j=2;   
+	while(i< size)  
+    {
+        if (arr[i-1] < arr[i]){
+            i=j;
+            j++;
+
+            vec.emplace_back(-1, -1);
+        }
+        else{
+            std::swap(arr[i-1], arr[i]);
+            vec.emplace_back(i, i-1);
+            i=i-1;
+            if (i==0){
+                i=j; 
+                j++;
+            }
+        }
+    }
+}
+void stooge_sort(double *arr, int left, int right, std::vector<std::pair<int, int>> &vec){
+    if(arr[left]> arr[right]){
+        std::swap(arr[left], arr[right]);
+        vec.emplace_back(left, right);
+    }
+    else{
+        vec.emplace_back(-1, -1);
+    }
+    if(left+1 >= right){
+        return ;
+    }
+    int temp;
+    temp = (right-left+1)/3;
+    stooge_sort(arr, left, right - temp, vec);
+    stooge_sort(arr, left + temp, right, vec);
+    stooge_sort(arr, left, right - temp, vec);
+
+}
+
+
+void slow_sort(double *arr, int left, int right, std::vector<std::pair<int, int>> &vec){
+    if (left>=right){
+        return;
+    }
+    int middle = (left+right)/2;
+    slow_sort(arr, left, middle, vec);
+    slow_sort(arr, middle+1, right, vec);
+    if (arr[right]< arr[middle]){
+        std::swap(arr[right], arr[middle]);
+        vec.emplace_back(right, middle);
+    }
+    else{
+        vec.emplace_back(-1, -1);
+    }
+    slow_sort(arr, left, right-1, vec);
+}
+
+
+void odd_even_sort(double *arr, int size, std::vector<std::pair<int, int>> &vec){
+    bool is_sorted =false;
+    while (!is_sorted){
+        is_sorted=true;
+        for (int i =1; i<=size-2; i=i+2){
+            if (arr[i]> arr[i+1]){
+                std::swap(arr[i], arr[i+1]);
+                vec.emplace_back(i, i+1);
+                is_sorted=false;
+            }
+            else {
+                vec.emplace_back(-1, -1);
+            }
+        }
+        for (int i =0; i<=size-2; i=i+2){
+            if (arr[i]> arr[i+1]){
+                std::swap(arr[i], arr[i+1]);
+                vec.emplace_back(i, i+1);
+                is_sorted=false;
+            }
+            else {
+                vec.emplace_back(-1, -1);
+            }
+        }
+    }
+    return;
 }

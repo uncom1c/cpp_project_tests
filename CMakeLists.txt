@@ -31,16 +31,12 @@ set( INC
 )
 
 add_subdirectory(sorts)
-add_subdirectory(tests)
 
 enable_testing()
 
 set( CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/SFML_${SFML_COMPILER_TYPE}" )
 find_package( SFML 2.6.1 REQUIRED network audio graphics window system )
 set( SFML_LIBS sfml-network sfml-audio sfml-graphics sfml-window sfml-system )
-
-find_package( OpenGL REQUIRED )
-set( OPEN_GL_LIBS opengl32 )
 
 add_executable( ${PROJECT_NAME} ${SRC} )
 target_include_directories( ${PROJECT_NAME} PUBLIC ${INC} )
