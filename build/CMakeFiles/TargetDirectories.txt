@@ -1,8 +1,0 @@
-/home/alaska/GitHub/cpp_project_tests/build/CMakeFiles/Kartinka.dir
-/home/alaska/GitHub/cpp_project_tests/build/CMakeFiles/test.dir
-/home/alaska/GitHub/cpp_project_tests/build/CMakeFiles/edit_cache.dir
-/home/alaska/GitHub/cpp_project_tests/build/CMakeFiles/rebuild_cache.dir
-/home/alaska/GitHub/cpp_project_tests/build/sorts/CMakeFiles/sorts.dir
-/home/alaska/GitHub/cpp_project_tests/build/sorts/CMakeFiles/test.dir
-/home/alaska/GitHub/cpp_project_tests/build/sorts/CMakeFiles/edit_cache.dir
-/home/alaska/GitHub/cpp_project_tests/build/sorts/CMakeFiles/rebuild_cache.dir
