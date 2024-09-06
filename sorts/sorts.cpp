@@ -98,42 +98,38 @@ void cocktailSort(double* arr, int n, std::vector <std::pair <int, int > >& vec)
         start++;
     }
 }
-int partition(double* a, int p, int r, std::vector <std::pair <int, int > >& vec)
+int partition(double* arr, int left, int right, std::vector <std::pair <int, int > >& vec)
 {
-    double x = *(a + r);
-    int i = p - 1;
+    double x = arr[right];
+    int i = left - 1;
     int j;
-    double tmp;
-    for (j = p; j < r; j++)
+    for (j = left; j < right; j++)
     {
-        if (*(a + j) <= x)
+        if (arr[j]<= x)
         {
             i++;
-            tmp = *(a + i);
-            *(a + i) = *(a + j);
-            *(a + j) = tmp;
+            std::swap(arr[i], arr[j]);
             vec.emplace_back(i, j);
         }
         else
             vec.emplace_back(1, -1);
     }
-    tmp = *(a + r);
-    *(a + r) = *(a + i + 1);
-    *(a + i + 1) = tmp;
-    vec.emplace_back(r, i+1);
+    std::swap(arr[right], arr[i+1]);
+    vec.emplace_back(right, i+1);
     return i + 1;
 }
 /// \brief Быстрая сортировка
-/// \param a - рандомное распределение
-/// \param p - размер a
+/// \param arr - рандомное распределение
+/// \param left - левая граница
+/// \param right - правая граница
 /// \param vec - вектор, хранящий все итерации, чтобы впоследствии их визуализировать
-void quickSort(double* a, int p, int r, std::vector <std::pair <int, int > >& vec)
+void quickSort(double* arr, int left, int right, std::vector <std::pair <int, int > >& vec)
 {
-    int q;
-    if (p < r) {
-        q = partition(a, p, r, vec);
-        quickSort(a, p, q - 1, vec);
-        quickSort(a, q + 1, r, vec);
+    int p;
+    if (left < right) {
+        p = partition(arr, left, right, vec);
+        quickSort(arr, left, p - 1, vec);
+        quickSort(arr, p + 1, right, vec);
     }
 }
 
