@@ -31,6 +31,7 @@ set( INC
 )
 
 add_subdirectory(sorts)
+add_subdirectory(tests)
 
 enable_testing()
 
