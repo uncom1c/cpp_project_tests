@@ -8,7 +8,7 @@
 /// \param num - рандомное распределение
 /// \param size - размер num
 /// \param vec - вектор, хранящий все итерации, чтобы впоследствии их визуализировать
-void selectionSort(double* num, int size, std::vector <std::pair <int, int > >& vec)
+void selectionSort(int* arr, int size, std::vector <std::pair <int, int > >& vec)
 {   
     int min;
     for (int i = 0; i < size - 1; i++)
@@ -17,12 +17,12 @@ void selectionSort(double* num, int size, std::vector <std::pair <int, int > >& 
         for (int j = i + 1; j < size; j++) 
         {   
             vec.emplace_back(-1, -1);
-            if (num[j] < num[min]) {
+            if (arr[j] < arr[min]) {
                 min = j;
             }
         }
         if (min == i) continue;  
-        std::swap(num[i], num[min]);
+        std::swap(arr[i], arr[min]);
         vec.emplace_back(i, min);
 
     }
@@ -32,8 +32,8 @@ void selectionSort(double* num, int size, std::vector <std::pair <int, int > >& 
 /// \param arr - рандомное распределение
 /// \param n - размер arr
 /// \param vec - вектор, хранящий все итерации, чтобы впоследствии их визуализировать
-void insertSort(double* arr, int n, std::vector <std::pair <int, int > >& vec) {
-    for (int i = 1; i < n; i++) {
+void insertSort(int* arr, int size, std::vector <std::pair <int, int > >& vec) {
+    for (int i = 1; i < size; i++) {
         for (int j = i; j > 0 && arr[j - 1] > arr[j]; j--) {
             vec.emplace_back(j, j-1);
             std::swap(arr[j-1], arr[j]);
@@ -45,7 +45,7 @@ void insertSort(double* arr, int n, std::vector <std::pair <int, int > >& vec) {
 /// \param arr - рандомное распределение
 /// \param size - размер arr
 /// \param vec - вектор, хранящий все итерации, чтобы впоследствии их визуализировать
-void bubbleSort(double* arr, int size, std::vector <std::pair <int, int > >& vec)
+void bubbleSort(int* arr, int size, std::vector <std::pair <int, int > >& vec)
 {
 
     for (int i = 0; i < size - 1; ++i) // i - номер прохода
@@ -67,9 +67,9 @@ void bubbleSort(double* arr, int size, std::vector <std::pair <int, int > >& vec
 /// \param arr - рандомное распределение
 /// \param n - размер arr
 /// \param vec - вектор, хранящий все итерации, чтобы впоследствии их визуализировать
-void cocktailSort(double* arr, int n, std::vector <std::pair <int, int > >& vec) {
+void cocktailSort(int* arr, int size, std::vector <std::pair <int, int > >& vec) {
     bool flag = true;
-    int start = 0, end = n - 1;
+    int start = 0, end = size - 1;
     while (flag) {
         flag = false;
         for (int i = start; i < end; i++) { //scan from left to right as bubble sort
@@ -98,7 +98,7 @@ void cocktailSort(double* arr, int n, std::vector <std::pair <int, int > >& vec)
         start++;
     }
 }
-int partition(double* arr, int left, int right, std::vector <std::pair <int, int > >& vec)
+int partition(int* arr, int left, int right, std::vector <std::pair <int, int > >& vec)
 {
     double x = arr[right];
     int i = left - 1;
@@ -123,7 +123,7 @@ int partition(double* arr, int left, int right, std::vector <std::pair <int, int
 /// \param left - левая граница
 /// \param right - правая граница
 /// \param vec - вектор, хранящий все итерации, чтобы впоследствии их визуализировать
-void quickSort(double* arr, int left, int right, std::vector <std::pair <int, int > >& vec)
+void quickSort(int* arr, int left, int right, std::vector <std::pair <int, int > >& vec)
 {
     int p;
     if (left < right) {
@@ -134,11 +134,11 @@ void quickSort(double* arr, int left, int right, std::vector <std::pair <int, in
 }
 
 //СОРТИРОВКА ШЕЛЛА
-void ShellSort(int length, double* arr, std::vector <std::pair <int, int > >& vec)
+void ShellSort(int* arr, int size,  std::vector <std::pair <int, int > >& vec)
 {
-    for (int step = length / 2; step > 0; step = step / 2)  // Расстояние между элементами
+    for (int step = size / 2; step > 0; step = step / 2)  // Расстояние между элементами
     {
-        for (int i = step; i < length; i++)                 // Проходим по массиву
+        for (int i = step; i < size; i++)                 // Проходим по массиву
         {
             for (int j = i - step; j >= 0; j = j - step)    // Проходим по элементам массива
             {
@@ -156,7 +156,7 @@ void ShellSort(int length, double* arr, std::vector <std::pair <int, int > >& ve
 }
 
 
-void gnome_sort(double *arr, int size , std::vector<std::pair<int, int>> &vec)
+void gnome_sort(int *arr, int size , std::vector<std::pair<int, int>> &vec)
 {
     int i = 1;
     int j=2;   
@@ -179,7 +179,7 @@ void gnome_sort(double *arr, int size , std::vector<std::pair<int, int>> &vec)
         }
     }
 }
-void stooge_sort(double *arr, int left, int right, std::vector<std::pair<int, int>> &vec){
+void stooge_sort(int *arr, int left, int right, std::vector<std::pair<int, int>> &vec){
     if(arr[left]> arr[right]){
         std::swap(arr[left], arr[right]);
         vec.emplace_back(left, right);
@@ -199,7 +199,7 @@ void stooge_sort(double *arr, int left, int right, std::vector<std::pair<int, in
 }
 
 
-void slow_sort(double *arr, int left, int right, std::vector<std::pair<int, int>> &vec){
+void slow_sort(int *arr, int left, int right, std::vector<std::pair<int, int>> &vec){
     if (left>=right){
         return;
     }
@@ -217,7 +217,7 @@ void slow_sort(double *arr, int left, int right, std::vector<std::pair<int, int>
 }
 
 
-void odd_even_sort(double *arr, int size, std::vector<std::pair<int, int>> &vec){
+void odd_even_sort(int *arr, int size, std::vector<std::pair<int, int>> &vec){
     bool is_sorted =false;
     while (!is_sorted){
         is_sorted=true;

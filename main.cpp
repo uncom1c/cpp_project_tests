@@ -182,6 +182,7 @@ im[99].loadFromFile("../images/100.png");
     Texture arrayTextureS7[100];
     Texture arrayTextureS8[100];
     Texture arrayTextureS9[100];
+    Texture arrayTextureS10[100];
     for (int i = 0; i < 100; i++)
         arrayTextureS1[i].loadFromImage(im[i]);
     for (int i = 0; i < 100; i++)
@@ -200,8 +201,10 @@ im[99].loadFromFile("../images/100.png");
         arrayTextureS8[i].loadFromImage(im[i]);
     for (int i = 0; i < 100; i++)
         arrayTextureS9[i].loadFromImage(im[i]);
+    for (int i = 0; i < 100; i++)
+        arrayTextureS10[i].loadFromImage(im[i]);
 
-    Sprite arraySprite[9][100];
+    Sprite arraySprite[10][100];
     for (int i = 0; i < 100; i++) {
         arraySprite[0][i].setTexture(arrayTextureS1[i]);
     }
@@ -229,6 +232,9 @@ im[99].loadFromFile("../images/100.png");
     for (int i = 0; i < 100; i++) {
         arraySprite[8][i].setTexture(arrayTextureS9[i]);
     }
+    for (int i = 0; i < 100; i++) {
+        arraySprite[9][i].setTexture(arrayTextureS10[i]);
+    }
 #pragma endregion
 //Инициализация и определение координат для спрайтов
 #pragma region SetCoordinatesForSprites
@@ -237,29 +243,31 @@ im[99].loadFromFile("../images/100.png");
     double yy = size.y;
     xx /= 5;
     yy /= 5;
-    double xMove = 0+ 10 * xx;;
-    double yMove = 0;
-    double listX[9][100];
-    double listY[9][100];
-    double listXS1[100];
-    double listYS1[100];
-    double listXS2[100];
-    double listYS2[100];
-    double listXS3[100];
-    double listYS3[100];
-    double listXS4[100];
-    double listYS4[100];
-    double listXS5[100];
-    double listYS5[100];
-    double listXS6[100];
-    double listYS6[100];
-    double listXS7[100];
-    double listYS7[100];
-    double listXS8[100];
-    double listYS8[100];
-    double listXS9[100];
-    double listYS9[100];
-    for (int S = 0; S < 9; S++) {
+    double xMove = 50+ 10 * xx;;
+    double yMove = 50;
+    double listX[10][100];
+    double listY[10][100];
+    int listXS1[100];
+    int listYS1[100];
+    int listXS2[100];
+    int listYS2[100];
+    int listXS3[100];
+    int listYS3[100];
+    int listXS4[100];
+    int listYS4[100];
+    int listXS5[100];
+    int listYS5[100];
+    int listXS6[100];
+    int listYS6[100];
+    int listXS7[100];
+    int listYS7[100];
+    int listXS8[100];
+    int listYS8[100];
+    int listXS9[100];
+    int listYS9[100];
+    int listXS10[100];
+    int listYS10[100];
+    for (int S = 0; S < 10; S++) {
 
         for (int i = 0; i < 100; i++) {
             if (i % 10 == 0) {
@@ -273,13 +281,13 @@ im[99].loadFromFile("../images/100.png");
             arraySprite[S][i].setScale(0.2, 0.2);
 
         }
-        if (S == 4 or S==8) {
-            xMove -= 60 * xx;
-            yMove += 15 * yy;
+        if (S == 3 or S== 7) {
+            xMove -= 39 * xx;
+            yMove += 10 * yy;
         }
 
         else {
-            xMove += 15 * xx;
+            xMove += 13 * xx;
             yMove -= 10 * yy;
         }
     }
@@ -304,6 +312,8 @@ im[99].loadFromFile("../images/100.png");
         listYS8[i] = listY[7][numbers[i]];
         listXS9[i] = listX[8][numbers[i]];
         listYS9[i] = listY[8][numbers[i]];
+        listXS10[i] = listX[9][numbers[i]];
+        listYS10[i] = listY[9][numbers[i]];
     }
     for (int i = 0; i < 100; i++) {
         listX[0][i] = listXS1[i];
@@ -324,6 +334,8 @@ im[99].loadFromFile("../images/100.png");
         listY[7][i] = listYS8[i];
         listX[8][i] = listXS9[i];
         listY[8][i] = listYS9[i];
+        listX[9][i] = listXS10[i];
+        listY[9][i] = listYS10[i];
         listXS1[i] = numbers[i];
         listXS2[i] = numbers[i];
         listXS3[i] = numbers[i];
@@ -333,6 +345,7 @@ im[99].loadFromFile("../images/100.png");
         listXS7[i] = numbers[i];
         listXS8[i] = numbers[i];
         listXS9[i] = numbers[i];
+        listXS10[i] = numbers[i];
 
     }
 #pragma endregion
@@ -348,6 +361,7 @@ im[99].loadFromFile("../images/100.png");
     std::vector<std::pair<int, int>> iterS7;
     std::vector<std::pair<int, int>> iterS8;
     std::vector<std::pair<int, int>> iterS9;
+    std::vector<std::pair<int, int>> iterS10;
     selectionSort(listXS1, 100, iterS1);
     insertSort(listXS2, 100, iterS2);
     bubbleSort(listXS3, 100, iterS3);
@@ -357,8 +371,8 @@ im[99].loadFromFile("../images/100.png");
     slow_sort(listXS7, 0, 99, iterS7);
     //mergeSort(listXS8,0, 99, iterS8, iterS8Copy, listXS8Res, listYS8Res);
     stooge_sort(listXS8, 0, 99, iterS8);
-    ShellSort(100, listXS9, iterS9);
-
+    ShellSort(listXS9, 100, iterS9);
+    odd_even_sort(listXS10, 100, iterS10);
 #pragma endregion
 //Визуализация сортировки
 #pragma region VisualisationOfSort
@@ -372,56 +386,70 @@ im[99].loadFromFile("../images/100.png");
     textS1.setCharacterSize(20);
     textS1.setFillColor(Color::Black);
     textS1.setStyle(sf::Text::Bold | sf::Text::Underlined);
-    textS1.setPosition(50 + 3 * xx, 50 + 12 * yy);
+    textS1.setPosition(75 + 3 * xx, 50 +11 * yy);
     Text textS2;
     textS2.setFont(font);
     textS2.setString("Insert sort");
     textS2.setCharacterSize(20);
     textS2.setFillColor(Color::Black);
     textS2.setStyle(sf::Text::Bold | sf::Text::Underlined);
-    textS2.setPosition(50 + 19 * xx, 50 + 12 * yy);
+    textS2.setPosition(75 + 16 * xx, 50 +11 * yy);
     Text textS3;
     textS3.setFont(font);
     textS3.setString("Bubble sort");
     textS3.setCharacterSize(20);
     textS3.setFillColor(Color::Black);
     textS3.setStyle(sf::Text::Bold | sf::Text::Underlined);
-    textS3.setPosition(50 + 34 * xx, 50 + 12 * yy);
+    textS3.setPosition(75 + 29 * xx, 50+11 * yy);
     Text textS4;
     textS4.setFont(font);
     textS4.setString("Cocktail sort");
     textS4.setCharacterSize(20);
     textS4.setFillColor(Color::Black);
     textS4.setStyle(sf::Text::Bold | sf::Text::Underlined);
-    textS4.setPosition(50 + 49 * xx, 50 + 12 * yy);
+    textS4.setPosition(75 + 42 * xx, 50 +11 * yy);
     Text textS5;
     textS5.setFont(font);
-    textS5.setString("Quick sort");
+    textS5.setString("Gnome sort");
     textS5.setCharacterSize(20);
     textS5.setFillColor(Color::Black);
     textS5.setStyle(sf::Text::Bold | sf::Text::Underlined);
-    textS5.setPosition(50 + 4 * xx, 50 + 22 * yy);
+    textS5.setPosition(75 + 3 * xx, 50 +19 * yy);
     Text textS6;
     textS6.setFont(font);
-    textS6.setString("Slow sort");
+    textS6.setString("Quick sort");
     textS6.setCharacterSize(20);
     textS6.setFillColor(Color::Black);
     textS6.setStyle(sf::Text::Bold | sf::Text::Underlined);
-    textS6.setPosition(50 + 19 * xx, 50 + 22 * yy);
+    textS6.setPosition(75 + 16 * xx, 50 +19 * yy);
     Text textS7;
     textS7.setFont(font);
-    textS7.setString("Stooge sort");
+    textS7.setString("Slow sort");
     textS7.setCharacterSize(20);
     textS7.setFillColor(Color::Black);
     textS7.setStyle(sf::Text::Bold | sf::Text::Underlined);
-    textS7.setPosition(50 + 34 * xx, 50 + 22 * yy);
+    textS7.setPosition(75 + 29 * xx, 50 +19 * yy);
     Text textS8;
     textS8.setFont(font);
-    textS8.setString("Shell sort");
+    textS8.setString("Stooge sort");
     textS8.setCharacterSize(20);
     textS8.setFillColor(Color::Black);
     textS8.setStyle(sf::Text::Bold | sf::Text::Underlined);
-    textS8.setPosition(50 + 49 * xx, 50 + 22 * yy);
+    textS8.setPosition(75 + 42 * xx, 50 +19 * yy);
+    Text textS9;
+    textS9.setFont(font);
+    textS9.setString("Shell sort");
+    textS9.setCharacterSize(20);
+    textS9.setFillColor(Color::Black);
+    textS9.setStyle(sf::Text::Bold | sf::Text::Underlined);
+    textS9.setPosition(75 + 3 * xx, 50 +39 * yy);
+    Text textS10;
+    textS10.setFont(font);
+    textS10.setString("Odd-even sort");
+    textS10.setCharacterSize(20);
+    textS10.setFillColor(Color::Black);
+    textS10.setStyle(sf::Text::Bold | sf::Text::Underlined);
+    textS10.setPosition(75 + 16 * xx,50 + 39 * yy);
     
     
    //задаем позицию текста, центр камеры
@@ -436,7 +464,8 @@ im[99].loadFromFile("../images/100.png");
     int c = 0;
     int v = 0;
     int d = 0;
-    int l =0;
+    int l = 0;
+    int q = 0;
     while (Window.isOpen())
     {
         Window.display();
@@ -451,12 +480,12 @@ im[99].loadFromFile("../images/100.png");
         Window.draw(textS6);
         Window.draw(textS7);
         Window.draw(textS8);
-        for (int S = 0; S < 9; S++) {
+        Window.draw(textS9);
+        Window.draw(textS10);
+        for (int S = 0; S < 10; S++) {
                 for (int i = 0; i < 100; i++) {
-                    if (S != 99){
                         arraySprite[S][i].setPosition(listX[S][i], listY[S][i]);
                         Window.draw(arraySprite[S][i]);
-                    }
                 }
         }
         Event event;
@@ -531,6 +560,13 @@ im[99].loadFromFile("../images/100.png");
                     std::swap(listY[7][iterS8[d].first], listY[7][iterS8[d].second]);
                 }
                 d++;
+            }
+            if (q < iterS10.size()) {
+                if (iterS10[q].first != -1) {
+                    std::swap(listX[9][iterS10[q].first], listX[9][iterS10[q].second]);
+                    std::swap(listY[9][iterS10[q].first], listY[9][iterS10[q].second]);
+                }
+                q++;
             }
         }
 
