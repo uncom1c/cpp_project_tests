@@ -1,30 +1,36 @@
-\doxysection{C\+:/\+Users/vudov/\+One\+Drive/Документы/\+Git\+Hub/cpp\+\_\+project\+\_\+tests/main.cpp File Reference}
-\hypertarget{main_8cpp}{}\label{main_8cpp}\index{C:/Users/vudov/OneDrive/Документы/GitHub/cpp\_project\_tests/main.cpp@{C:/Users/vudov/OneDrive/Документы/GitHub/cpp\_project\_tests/main.cpp}}
-{\ttfamily \#include $<$iostream$>$}\newline
-{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
 {\ttfamily \#include $<$SFML/\+Graphics.\+hpp$>$}\newline
-{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$SFML/\+Window.\+hpp$>$}\newline
 {\ttfamily \#include $<$cassert$>$}\newline
-{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$list$>$}\newline
-{\ttfamily \#include $<$Windows.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
 {\ttfamily \#include "{}sorts/sorts.\+h"{}}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{struct_p_r_n_g}{PRNG}}
-\end{DoxyCompactItemize}
+struct \mbox{\hyperlink{structPRNG}{PRNG}}
+\begin{DoxyCompactList}\small\item\em класс \doxylink{structPRNG}{PRNG} с генерацией ключа для алгоритма генерации псевдо случайных чисел \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{main_8cpp_acf27d6637189bac0e454e2aa444342ff}{init\+Generator}} (\mbox{\hyperlink{struct_p_r_n_g}{PRNG}} \&generator)
-\item 
-unsigned \mbox{\hyperlink{main_8cpp_a4045ac396c07e0b5b9cf5e48bddc92c9}{random}} (\mbox{\hyperlink{struct_p_r_n_g}{PRNG}} \&generator, unsigned min\+Value, unsigned max\+Value)
-\item 
-void \mbox{\hyperlink{main_8cpp_a38a2c43e65d98691cfa511d24017ca05}{peremeshka}} (int counter, \mbox{\hyperlink{struct_p_r_n_g}{PRNG}} \&generator, std\+::vector$<$ int $>$ \&randomcheeeck, std\+::vector$<$ int $>$ \&data)
-\item 
+void \mbox{\hyperlink{main_8cpp_acf27d6637189bac0e454e2aa444342ff}{init\+Generator}} (\mbox{\hyperlink{structPRNG}{PRNG}} \&generator)
+\begin{DoxyCompactList}\small\item\em функция init\+Generator для того, чтобы задавать начальное значение seed \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{main_8cpp_a4045ac396c07e0b5b9cf5e48bddc92c9}{random}} (\mbox{\hyperlink{structPRNG}{PRNG}} \&generator, unsigned min\+Value, unsigned max\+Value)
+\begin{DoxyCompactList}\small\item\em 
+\begin{DoxyItemize}
+\item функция, возвращающая случайный элемент 
+\end{DoxyItemize}\end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_ac211fa1523e6dd01701003773958aadc}{peremeshka}} (int counter, \mbox{\hyperlink{structPRNG}{PRNG}} \&generator, std\+::vector$<$ int $>$ \&random\+\_\+out, std\+::vector$<$ int $>$ \&data)
+\begin{DoxyCompactList}\small\item\em 
+\begin{DoxyItemize}
+\item функция, возвращающая перемешанный массив random\+\_\+out 
+\end{DoxyItemize}\end{DoxyCompactList}\item 
 int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 \end{DoxyCompactItemize}
 
@@ -34,39 +40,66 @@ int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 \index{initGenerator@{initGenerator}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{initGenerator()}{initGenerator()}}
 {\footnotesize\ttfamily \label{main_8cpp_acf27d6637189bac0e454e2aa444342ff} 
-void init\+Generator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_r_n_g}{PRNG}} \&}]{generator}{}\end{DoxyParamCaption})}
+void init\+Generator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPRNG}{PRNG}} \&}]{generator}{}\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{main_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+функция init\+Generator для того, чтобы задавать начальное значение seed 
 
+
+\begin{DoxyParams}{Parameters}
+{\em generator} & -\/ элемент seed, хранящий в себе это значение \\
+\hline
+\end{DoxyParams}
 \Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.cpp@{main.cpp}!main@{main}}
 \index{main@{main}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily \label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
 int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-
-
-Definition at line \mbox{\hyperlink{main_8cpp_source_l00321}{321}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
-
-\Hypertarget{main_8cpp_a38a2c43e65d98691cfa511d24017ca05}\index{main.cpp@{main.cpp}!peremeshka@{peremeshka}}
+\Hypertarget{main_8cpp_ac211fa1523e6dd01701003773958aadc}\index{main.cpp@{main.cpp}!peremeshka@{peremeshka}}
 \index{peremeshka@{peremeshka}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{peremeshka()}{peremeshka()}}
-{\footnotesize\ttfamily \label{main_8cpp_a38a2c43e65d98691cfa511d24017ca05} 
-void peremeshka (\begin{DoxyParamCaption}\item[{int}]{counter}{, }\item[{\mbox{\hyperlink{struct_p_r_n_g}{PRNG}} \&}]{generator}{, }\item[{std\+::vector$<$ int $>$ \&}]{randomcheeeck}{, }\item[{std\+::vector$<$ int $>$ \&}]{data}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{main_8cpp_ac211fa1523e6dd01701003773958aadc} 
+void peremeshka (\begin{DoxyParamCaption}\item[{int}]{counter}{, }\item[{\mbox{\hyperlink{structPRNG}{PRNG}} \&}]{generator}{, }\item[{std\+::vector$<$ int $>$ \&}]{random\+\_\+out}{, }\item[{std\+::vector$<$ int $>$ \&}]{data}{}\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{main_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
 
+\begin{DoxyItemize}
+\item функция, возвращающая перемешанный массив random\+\_\+out 
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em counter} & -\/ количество оставшихся элементов для вставки \\
+\hline
+{\em generator} & -\/ элемент seed \\
+\hline
+{\em random\+\_\+out} & -\/ массив со случайным распределением \\
+\hline
+{\em data} & -\/ отсортированный массив, откуда берутся значения для вставки в массив random\+\_\+out \\
+\hline
+\end{DoxyParams}
 \Hypertarget{main_8cpp_a4045ac396c07e0b5b9cf5e48bddc92c9}\index{main.cpp@{main.cpp}!random@{random}}
 \index{random@{random}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{random()}{random()}}
 {\footnotesize\ttfamily \label{main_8cpp_a4045ac396c07e0b5b9cf5e48bddc92c9} 
-unsigned random (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_r_n_g}{PRNG}} \&}]{generator}{, }\item[{unsigned}]{min\+Value}{, }\item[{unsigned}]{max\+Value}{}\end{DoxyParamCaption})}
+unsigned random (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPRNG}{PRNG}} \&}]{generator}{, }\item[{unsigned}]{min\+Value}{, }\item[{unsigned}]{max\+Value}{}\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{main_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
 
+\begin{DoxyItemize}
+\item функция, возвращающая случайный элемент 
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em generator} & -\/ начальное значение \\
+\hline
+{\em min\+Value} & -\/ минимально возможный возвращенный элемент \\
+\hline
+{\em max\+Value} & -\/ максимально возможный возвращенный элемент \\
+\hline
+\end{DoxyParams}

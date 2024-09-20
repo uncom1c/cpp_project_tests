@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['mergesort_0',['mergeSort',['../sorts_8cpp.html#a1ff307835d2c539a32025f1d783e9f95',1,'mergeSort(double *a, int l, int r, std::vector&lt; std::pair&lt; int, int &gt; &gt; &amp;vec, std::vector&lt; std::pair&lt; double, double &gt; &gt; &amp;vec1, double *X, double *Y):&#160;sorts.cpp'],['../sorts_8h.html#a1ff307835d2c539a32025f1d783e9f95',1,'mergeSort(double *a, int l, int r, std::vector&lt; std::pair&lt; int, int &gt; &gt; &amp;vec, std::vector&lt; std::pair&lt; double, double &gt; &gt; &amp;vec1, double *X, double *Y):&#160;sorts.cpp']]]
+  ['initgenerator_0',['initGenerator',['../main_8cpp.html#acf27d6637189bac0e454e2aa444342ff',1,'main.cpp']]],
+  ['insertsort_1',['insertSort',['../sorts_8cpp.html#a5384ddb4339c478b592e3c2082b89e40',1,'insertSort(int *arr, int size, std::vector&lt; std::pair&lt; int, int &gt; &gt; &amp;vec):&#160;sorts.cpp'],['../sorts_8h.html#a43705dc6747ba6770a46733c6a34c874',1,'insertSort(int *arr, int n, std::vector&lt; std::pair&lt; int, int &gt; &gt; &amp;vec):&#160;sorts.cpp']]]
 ];

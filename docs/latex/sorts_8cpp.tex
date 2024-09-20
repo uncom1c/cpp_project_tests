@@ -1,188 +1,181 @@
-\doxysection{sorts.\+cpp File Reference}
-\hypertarget{sorts_8cpp}{}\label{sorts_8cpp}\index{sorts.cpp@{sorts.cpp}}
+\doxysection{sorts/sorts.cpp File Reference}
+\hypertarget{sorts_8cpp}{}\label{sorts_8cpp}\index{sorts/sorts.cpp@{sorts/sorts.cpp}}
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$list$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{sorts_8cpp_a682fe5f8505e8a50acb3c7cc459f9138}{swap}} (double \texorpdfstring{$\ast$}{*}a, double \texorpdfstring{$\ast$}{*}b)
-\begin{DoxyCompactList}\small\item\em Функция перемены местами \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{sorts_8cpp_a07e8f9ed6b983ee1a184dbc3bc4539db}{swapint}} (int \texorpdfstring{$\ast$}{*}a, int \texorpdfstring{$\ast$}{*}b)
-\begin{DoxyCompactList}\small\item\em Функция перемены значениями \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{sorts_8cpp_ab56122155b3abe5ae9458e04c2c968b2}{selection\+Sort}} (double \texorpdfstring{$\ast$}{*}num, int size, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
+void \mbox{\hyperlink{sorts_8cpp_abfe5a478d641487ffd3597685dfa6423}{selection\+Sort}} (int \texorpdfstring{$\ast$}{*}arr, int size, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
 \begin{DoxyCompactList}\small\item\em Сортировка выбором \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{sorts_8cpp_af8cb2ee6bbaf1e39c19281b11b5764e8}{insert\+Sort}} (double \texorpdfstring{$\ast$}{*}arr, int n, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
+void \mbox{\hyperlink{sorts_8cpp_a5384ddb4339c478b592e3c2082b89e40}{insert\+Sort}} (int \texorpdfstring{$\ast$}{*}arr, int size, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
 \begin{DoxyCompactList}\small\item\em Сортировка вставкой \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{sorts_8cpp_a25f2363afac2baab5cf9aa0b5622ccce}{bubble\+Sort}} (double \texorpdfstring{$\ast$}{*}arr, int size, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
+void \mbox{\hyperlink{sorts_8cpp_ad22f5afa84d41ac2f402e6a4dbfa118c}{bubble\+Sort}} (int \texorpdfstring{$\ast$}{*}arr, int size, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
 \begin{DoxyCompactList}\small\item\em Сортировка пузырьком \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{sorts_8cpp_a594885b0391251fd2da24d056a2597d0}{cocktail\+Sort}} (double \texorpdfstring{$\ast$}{*}arr, int n, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
+void \mbox{\hyperlink{sorts_8cpp_a13ff30cebe627729d2439009e4fcfa83}{cocktail\+Sort}} (int \texorpdfstring{$\ast$}{*}arr, int size, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
 \begin{DoxyCompactList}\small\item\em Сортировка шейкером \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{sorts_8cpp_a6b4de4868c29789cf54a9c03967aff96}{partition}} (double \texorpdfstring{$\ast$}{*}a, int p, int r, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
-\item 
-void \mbox{\hyperlink{sorts_8cpp_af03e220800cc7b3ed3a8b52717acc95f}{quick\+Sort}} (double \texorpdfstring{$\ast$}{*}a, int p, int r, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
+int \mbox{\hyperlink{sorts_8cpp_a83abb31bf2b972138dc671bb64e271d1}{partition}} (int \texorpdfstring{$\ast$}{*}arr, int left, int right, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
+\begin{DoxyCompactList}\small\item\em вспомогательная фунция для быстрой сортировки \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sorts_8cpp_a984ded20ab2842f584e1eb0d845597e5}{quick\+Sort}} (int \texorpdfstring{$\ast$}{*}arr, int left, int right, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
 \begin{DoxyCompactList}\small\item\em Быстрая сортировка \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{sorts_8cpp_a3e7734313e1df1298e2978b8e34caa80}{circlesort}} (double \texorpdfstring{$\ast$}{*}arr, int lo, int hi, int swaps, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
-\begin{DoxyCompactList}\small\item\em Круговая сортировка \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{sorts_8cpp_a5bbabc58aa54602012ced7e7d37b4961}{circlesort\+Driver}} (double \texorpdfstring{$\ast$}{*}arr, int n, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
-\item 
-void \mbox{\hyperlink{sorts_8cpp_a1ff307835d2c539a32025f1d783e9f95}{merge\+Sort}} (double \texorpdfstring{$\ast$}{*}a, int l, int r, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec, std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \&vec1, double \texorpdfstring{$\ast$}{*}X, double \texorpdfstring{$\ast$}{*}Y)
-\item 
-void \mbox{\hyperlink{sorts_8cpp_a335622e9165d08b1b0e2c2c3bc402b26}{Shell\+Sort}} (int length, double \texorpdfstring{$\ast$}{*}arr, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{sorts_8cpp_ac301c776a343565b8b8d374d2ba6f0ac}{Shell\+Sort}} (int \texorpdfstring{$\ast$}{*}arr, int size, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
+\begin{DoxyCompactList}\small\item\em Сортировка шелла \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sorts_8cpp_a789992e5ad5e0b3c7ec083a5b4b3166b}{gnome\+\_\+sort}} (int \texorpdfstring{$\ast$}{*}arr, int size, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
+\begin{DoxyCompactList}\small\item\em Гномья сортировка \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sorts_8cpp_acfc903c8cd8bbd593d9d8965574589be}{stooge\+\_\+sort}} (int \texorpdfstring{$\ast$}{*}arr, int left, int right, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
+\begin{DoxyCompactList}\small\item\em Придурковатая сортировка \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sorts_8cpp_a58c2b2015671bc225688c2b93f98ddfe}{slow\+\_\+sort}} (int \texorpdfstring{$\ast$}{*}arr, int left, int right, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
+\begin{DoxyCompactList}\small\item\em Медленная сортировка \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sorts_8cpp_aa136090a37fe9f46469c4dbdbf0abea3}{odd\+\_\+even\+\_\+sort}} (int \texorpdfstring{$\ast$}{*}arr, int size, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&vec)
+\begin{DoxyCompactList}\small\item\em Четная-\/нечетная сортировка \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{sorts_8cpp_a25f2363afac2baab5cf9aa0b5622ccce}\index{sorts.cpp@{sorts.cpp}!bubbleSort@{bubbleSort}}
+\Hypertarget{sorts_8cpp_ad22f5afa84d41ac2f402e6a4dbfa118c}\index{sorts.cpp@{sorts.cpp}!bubbleSort@{bubbleSort}}
 \index{bubbleSort@{bubbleSort}!sorts.cpp@{sorts.cpp}}
 \doxysubsubsection{\texorpdfstring{bubbleSort()}{bubbleSort()}}
-{\footnotesize\ttfamily \label{sorts_8cpp_a25f2363afac2baab5cf9aa0b5622ccce} 
-void bubble\+Sort (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{int}]{size}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{sorts_8cpp_ad22f5afa84d41ac2f402e6a4dbfa118c} 
+void bubble\+Sort (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{int}]{size}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
 
 
 
 Сортировка пузырьком 
 
-Прохождение по каждому элементу и сравнение каждой последующей пары. Если они не удовлетворяют сортировке то менять местами 
+Прохождение по каждому элементу и сравнение каждой последующей пары. Если они не удовлетворяют сортировке то менять местами
 \begin{DoxyParams}{Parameters}
-{\em arr} & -\/ рандомное распределение \\
+{\em arr} & -\/ массив из int, случайно распределенный\\
 \hline
-{\em size} & -\/ размер arr \\
+{\em size} & -\/ размер arr\\
 \hline
-{\em vec} & -\/ вектор, хранящий все итерации, чтобы впоследствии их визуализировать \\
+{\em vec} & -\/ вектор, хранящий все ходы сортировки, чтобы впоследствии их визуализировать \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{sorts_8cpp_source_l00061}{61}} of file \mbox{\hyperlink{sorts_8cpp_source}{sorts.\+cpp}}.
-
-\Hypertarget{sorts_8cpp_a3e7734313e1df1298e2978b8e34caa80}\index{sorts.cpp@{sorts.cpp}!circlesort@{circlesort}}
-\index{circlesort@{circlesort}!sorts.cpp@{sorts.cpp}}
-\doxysubsubsection{\texorpdfstring{circlesort()}{circlesort()}}
-{\footnotesize\ttfamily \label{sorts_8cpp_a3e7734313e1df1298e2978b8e34caa80} 
-int circlesort (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{int}]{lo}{, }\item[{int}]{hi}{, }\item[{int}]{swaps}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
-
-
-
-Круговая сортировка 
-
-
-\begin{DoxyParams}{Parameters}
-{\em arr} & -\/ рандомное распределение \\
-\hline
-{\em n} & -\/ размер arr \\
-\hline
-{\em vec} & -\/ вектор, хранящий все итерации, чтобы впоследствии их визуализировать \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{sorts_8cpp_source_l00157}{157}} of file \mbox{\hyperlink{sorts_8cpp_source}{sorts.\+cpp}}.
-
-\Hypertarget{sorts_8cpp_a5bbabc58aa54602012ced7e7d37b4961}\index{sorts.cpp@{sorts.cpp}!circlesortDriver@{circlesortDriver}}
-\index{circlesortDriver@{circlesortDriver}!sorts.cpp@{sorts.cpp}}
-\doxysubsubsection{\texorpdfstring{circlesortDriver()}{circlesortDriver()}}
-{\footnotesize\ttfamily \label{sorts_8cpp_a5bbabc58aa54602012ced7e7d37b4961} 
-void circlesort\+Driver (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{int}]{n}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
-
-
-
-Definition at line \mbox{\hyperlink{sorts_8cpp_source_l00188}{188}} of file \mbox{\hyperlink{sorts_8cpp_source}{sorts.\+cpp}}.
-
-\Hypertarget{sorts_8cpp_a594885b0391251fd2da24d056a2597d0}\index{sorts.cpp@{sorts.cpp}!cocktailSort@{cocktailSort}}
+\Hypertarget{sorts_8cpp_a13ff30cebe627729d2439009e4fcfa83}\index{sorts.cpp@{sorts.cpp}!cocktailSort@{cocktailSort}}
 \index{cocktailSort@{cocktailSort}!sorts.cpp@{sorts.cpp}}
 \doxysubsubsection{\texorpdfstring{cocktailSort()}{cocktailSort()}}
-{\footnotesize\ttfamily \label{sorts_8cpp_a594885b0391251fd2da24d056a2597d0} 
-void cocktail\+Sort (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{int}]{n}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{sorts_8cpp_a13ff30cebe627729d2439009e4fcfa83} 
+void cocktail\+Sort (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{int}]{size}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
 
 
 
 Сортировка шейкером 
 
-Алгоритм очень похож на пузырек, но при завершении обхода списка этот алгоритм не начинает все время с одного и того же конца, как пузырёк, а ходит туда-\/сюда 
+Алгоритм очень похож на пузырек, но при завершении обхода списка этот алгоритм не начинает все время с одного и того же конца, как пузырёк, а ходит туда-\/сюда
 \begin{DoxyParams}{Parameters}
-{\em arr} & -\/ рандомное распределение \\
+{\em arr} & -\/ массив из int, случайно распределенный\\
 \hline
-{\em n} & -\/ размер arr \\
+{\em size} & 
+\begin{DoxyItemize}
+\item размер arr
+\end{DoxyItemize}\\
 \hline
-{\em vec} & -\/ вектор, хранящий все итерации, чтобы впоследствии их визуализировать \\
+{\em vec} & -\/ вектор, хранящий все ходы сортировки, чтобы впоследствии их визуализировать \\
 \hline
 \end{DoxyParams}
+\Hypertarget{sorts_8cpp_a789992e5ad5e0b3c7ec083a5b4b3166b}\index{sorts.cpp@{sorts.cpp}!gnome\_sort@{gnome\_sort}}
+\index{gnome\_sort@{gnome\_sort}!sorts.cpp@{sorts.cpp}}
+\doxysubsubsection{\texorpdfstring{gnome\_sort()}{gnome\_sort()}}
+{\footnotesize\ttfamily \label{sorts_8cpp_a789992e5ad5e0b3c7ec083a5b4b3166b} 
+void gnome\+\_\+sort (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{int}]{size}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
 
 
-Definition at line \mbox{\hyperlink{sorts_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{sorts_8cpp_source}{sorts.\+cpp}}.
 
-\Hypertarget{sorts_8cpp_af8cb2ee6bbaf1e39c19281b11b5764e8}\index{sorts.cpp@{sorts.cpp}!insertSort@{insertSort}}
+Гномья сортировка 
+
+Алгоритм является соединенной версией алгоритма сортировки пузырьком и вставок Алгоритм находит позицию, где элементы в неправильном порядке и меняет их местами, после чего шагает назад, пока не вставит все на свое место, потом идет вперед
+\begin{DoxyParams}{Parameters}
+{\em arr} & -\/ массив из int, случайно распределенный\\
+\hline
+{\em size} & -\/ размер arr\\
+\hline
+{\em vec} & -\/ вектор, хранящий все ходы сортировки, чтобы впоследствии их визуализировать \\
+\hline
+\end{DoxyParams}
+\Hypertarget{sorts_8cpp_a5384ddb4339c478b592e3c2082b89e40}\index{sorts.cpp@{sorts.cpp}!insertSort@{insertSort}}
 \index{insertSort@{insertSort}!sorts.cpp@{sorts.cpp}}
 \doxysubsubsection{\texorpdfstring{insertSort()}{insertSort()}}
-{\footnotesize\ttfamily \label{sorts_8cpp_af8cb2ee6bbaf1e39c19281b11b5764e8} 
-void insert\+Sort (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{int}]{n}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{sorts_8cpp_a5384ddb4339c478b592e3c2082b89e40} 
+void insert\+Sort (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{int}]{size}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
 
 
 
 Сортировка вставкой 
 
-Прохождение по каждому элементу и перемещение элеменета туда, где он будет отсортирован 
+Прохождение по каждому элементу и перемещение элемента на свое место в отсортированном массиве
 \begin{DoxyParams}{Parameters}
-{\em arr} & -\/ рандомное распределение \\
+{\em arr} & -\/ массив из int, случайно распределенный\\
 \hline
-{\em n} & -\/ размер arr \\
+{\em size} & -\/ размер arr\\
 \hline
-{\em vec} & -\/ вектор, хранящий все итерации, чтобы впоследствии их визуализировать \\
+{\em vec} & -\/ вектор, хранящий все ходы сортировки, чтобы впоследствии их визуализировать \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{sorts_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{sorts_8cpp_source}{sorts.\+cpp}}.
-
-\Hypertarget{sorts_8cpp_a1ff307835d2c539a32025f1d783e9f95}\index{sorts.cpp@{sorts.cpp}!mergeSort@{mergeSort}}
-\index{mergeSort@{mergeSort}!sorts.cpp@{sorts.cpp}}
-\doxysubsubsection{\texorpdfstring{mergeSort()}{mergeSort()}}
-{\footnotesize\ttfamily \label{sorts_8cpp_a1ff307835d2c539a32025f1d783e9f95} 
-void merge\+Sort (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{int}]{l}{, }\item[{int}]{r}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{, }\item[{std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \&}]{vec1}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{X}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{Y}{}\end{DoxyParamCaption})}
+\Hypertarget{sorts_8cpp_aa136090a37fe9f46469c4dbdbf0abea3}\index{sorts.cpp@{sorts.cpp}!odd\_even\_sort@{odd\_even\_sort}}
+\index{odd\_even\_sort@{odd\_even\_sort}!sorts.cpp@{sorts.cpp}}
+\doxysubsubsection{\texorpdfstring{odd\_even\_sort()}{odd\_even\_sort()}}
+{\footnotesize\ttfamily \label{sorts_8cpp_aa136090a37fe9f46469c4dbdbf0abea3} 
+void odd\+\_\+even\+\_\+sort (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{int}]{size}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{sorts_8cpp_source_l00193}{193}} of file \mbox{\hyperlink{sorts_8cpp_source}{sorts.\+cpp}}.
+Четная-\/нечетная сортировка 
 
-\Hypertarget{sorts_8cpp_a6b4de4868c29789cf54a9c03967aff96}\index{sorts.cpp@{sorts.cpp}!partition@{partition}}
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & -\/ массив из int, случайно распределенный \\
+\hline
+{\em size} & -\/ размер arr \\
+\hline
+{\em vec} & -\/ вектор, хранящий все ходы сортировки, чтобы впоследствии их визуализировать \\
+\hline
+\end{DoxyParams}
+\Hypertarget{sorts_8cpp_a83abb31bf2b972138dc671bb64e271d1}\index{sorts.cpp@{sorts.cpp}!partition@{partition}}
 \index{partition@{partition}!sorts.cpp@{sorts.cpp}}
 \doxysubsubsection{\texorpdfstring{partition()}{partition()}}
-{\footnotesize\ttfamily \label{sorts_8cpp_a6b4de4868c29789cf54a9c03967aff96} 
-int partition (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{int}]{p}{, }\item[{int}]{r}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{sorts_8cpp_a83abb31bf2b972138dc671bb64e271d1} 
+int partition (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{int}]{left}{, }\item[{int}]{right}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{sorts_8cpp_source_l00114}{114}} of file \mbox{\hyperlink{sorts_8cpp_source}{sorts.\+cpp}}.
+вспомогательная фунция для быстрой сортировки 
 
-\Hypertarget{sorts_8cpp_af03e220800cc7b3ed3a8b52717acc95f}\index{sorts.cpp@{sorts.cpp}!quickSort@{quickSort}}
+возвращает случайный элемент p и меняет массив так, что все, меньшее p -\/ слева от него, а большее -\/ справа
+\begin{DoxyParams}{Parameters}
+{\em arr} & -\/ массив из int, случайно распределенный\\
+\hline
+{\em left} & -\/ левая граница\\
+\hline
+{\em right} & -\/ правая граница \\
+\hline
+{\em vec} & -\/ вектор, хранящий все ходы сортировки, чтобы впоследствии их визуализировать \\
+\hline
+\end{DoxyParams}
+\Hypertarget{sorts_8cpp_a984ded20ab2842f584e1eb0d845597e5}\index{sorts.cpp@{sorts.cpp}!quickSort@{quickSort}}
 \index{quickSort@{quickSort}!sorts.cpp@{sorts.cpp}}
 \doxysubsubsection{\texorpdfstring{quickSort()}{quickSort()}}
-{\footnotesize\ttfamily \label{sorts_8cpp_af03e220800cc7b3ed3a8b52717acc95f} 
-void quick\+Sort (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{int}]{p}{, }\item[{int}]{r}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{sorts_8cpp_a984ded20ab2842f584e1eb0d845597e5} 
+void quick\+Sort (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{int}]{left}{, }\item[{int}]{right}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
 
 
 
 Быстрая сортировка 
 
-
+Сначала запускает вспомогательную функцию partition, затем относительно двух возвращенных половин вызывает сама себя, пока не отсортируется
 \begin{DoxyParams}{Parameters}
-{\em a} & -\/ рандомное распределение \\
+{\em arr} & -\/ массив из int, случайно распределенный\\
 \hline
-{\em p} & -\/ размер a \\
+{\em left} & -\/ левая граница\\
 \hline
-{\em vec} & -\/ вектор, хранящий все итерации, чтобы впоследствии их визуализировать \\
+{\em right} & -\/ правая граница\\
+\hline
+{\em vec} & -\/ вектор, хранящий все ходы сортировки, чтобы впоследствии их визуализировать \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{sorts_8cpp_source_l00143}{143}} of file \mbox{\hyperlink{sorts_8cpp_source}{sorts.\+cpp}}.
-
-\Hypertarget{sorts_8cpp_ab56122155b3abe5ae9458e04c2c968b2}\index{sorts.cpp@{sorts.cpp}!selectionSort@{selectionSort}}
+\Hypertarget{sorts_8cpp_abfe5a478d641487ffd3597685dfa6423}\index{sorts.cpp@{sorts.cpp}!selectionSort@{selectionSort}}
 \index{selectionSort@{selectionSort}!sorts.cpp@{sorts.cpp}}
 \doxysubsubsection{\texorpdfstring{selectionSort()}{selectionSort()}}
-{\footnotesize\ttfamily \label{sorts_8cpp_ab56122155b3abe5ae9458e04c2c968b2} 
-void selection\+Sort (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{num}{, }\item[{int}]{size}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{sorts_8cpp_abfe5a478d641487ffd3597685dfa6423} 
+void selection\+Sort (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{int}]{size}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
 
 
 
@@ -190,52 +183,71 @@ void selection\+Sort (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\as
 
 Выбираем минимальный элемент -\/\texorpdfstring{$>$}{>} переносим его в начало 
 \begin{DoxyParams}{Parameters}
-{\em num} & -\/ рандомное распределение \\
+{\em arr} & -\/ массив из int, случайно распределенный \\
 \hline
-{\em size} & -\/ размер num \\
+{\em size} & -\/ размер arr \\
 \hline
-{\em vec} & -\/ вектор, хранящий все итерации, чтобы впоследствии их визуализировать \\
+{\em vec} & -\/ вектор, хранящий все ходы сортировки, чтобы впоследствии их визуализировать \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{sorts_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{sorts_8cpp_source}{sorts.\+cpp}}.
-
-\Hypertarget{sorts_8cpp_a335622e9165d08b1b0e2c2c3bc402b26}\index{sorts.cpp@{sorts.cpp}!ShellSort@{ShellSort}}
+\Hypertarget{sorts_8cpp_ac301c776a343565b8b8d374d2ba6f0ac}\index{sorts.cpp@{sorts.cpp}!ShellSort@{ShellSort}}
 \index{ShellSort@{ShellSort}!sorts.cpp@{sorts.cpp}}
 \doxysubsubsection{\texorpdfstring{ShellSort()}{ShellSort()}}
-{\footnotesize\ttfamily \label{sorts_8cpp_a335622e9165d08b1b0e2c2c3bc402b26} 
-void Shell\+Sort (\begin{DoxyParamCaption}\item[{int}]{length}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{sorts_8cpp_ac301c776a343565b8b8d374d2ba6f0ac} 
+void Shell\+Sort (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{int}]{size}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{sorts_8cpp_source_l00238}{238}} of file \mbox{\hyperlink{sorts_8cpp_source}{sorts.\+cpp}}.
+Сортировка шелла 
 
-\Hypertarget{sorts_8cpp_a682fe5f8505e8a50acb3c7cc459f9138}\index{sorts.cpp@{sorts.cpp}!swap@{swap}}
-\index{swap@{swap}!sorts.cpp@{sorts.cpp}}
-\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
-{\footnotesize\ttfamily \label{sorts_8cpp_a682fe5f8505e8a50acb3c7cc459f9138} 
-void swap (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
-
-
-
-Функция перемены местами 
-
-
-
-Definition at line \mbox{\hyperlink{sorts_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{sorts_8cpp_source}{sorts.\+cpp}}.
-
-\Hypertarget{sorts_8cpp_a07e8f9ed6b983ee1a184dbc3bc4539db}\index{sorts.cpp@{sorts.cpp}!swapint@{swapint}}
-\index{swapint@{swapint}!sorts.cpp@{sorts.cpp}}
-\doxysubsubsection{\texorpdfstring{swapint()}{swapint()}}
-{\footnotesize\ttfamily \label{sorts_8cpp_a07e8f9ed6b983ee1a184dbc3bc4539db} 
-void swapint (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
+Алгоритм является улучшенной версией алгоритма вставок Сначала сортируются значения, стоящие на расстоянии step друг от друга, затем step уменьшается, пока не станет равен 1 
+\begin{DoxyParams}{Parameters}
+{\em arr} & -\/ массив из int, случайно распределенный \\
+\hline
+{\em size} & -\/ размер arr \\
+\hline
+{\em vec} & -\/ вектор, хранящий все ходы сортировки, чтобы впоследствии их визуализировать \\
+\hline
+\end{DoxyParams}
+\Hypertarget{sorts_8cpp_a58c2b2015671bc225688c2b93f98ddfe}\index{sorts.cpp@{sorts.cpp}!slow\_sort@{slow\_sort}}
+\index{slow\_sort@{slow\_sort}!sorts.cpp@{sorts.cpp}}
+\doxysubsubsection{\texorpdfstring{slow\_sort()}{slow\_sort()}}
+{\footnotesize\ttfamily \label{sorts_8cpp_a58c2b2015671bc225688c2b93f98ddfe} 
+void slow\+\_\+sort (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{int}]{left}{, }\item[{int}]{right}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
 
 
 
-Функция перемены значениями 
+Медленная сортировка 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & -\/ массив из int, случайно распределенный \\
+\hline
+{\em left} & -\/ левая граница \\
+\hline
+{\em right} & -\/ правая граница \\
+\hline
+{\em vec} & -\/ вектор, хранящий все ходы сортировки, чтобы впоследствии их визуализировать \\
+\hline
+\end{DoxyParams}
+\Hypertarget{sorts_8cpp_acfc903c8cd8bbd593d9d8965574589be}\index{sorts.cpp@{sorts.cpp}!stooge\_sort@{stooge\_sort}}
+\index{stooge\_sort@{stooge\_sort}!sorts.cpp@{sorts.cpp}}
+\doxysubsubsection{\texorpdfstring{stooge\_sort()}{stooge\_sort()}}
+{\footnotesize\ttfamily \label{sorts_8cpp_acfc903c8cd8bbd593d9d8965574589be} 
+void stooge\+\_\+sort (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{arr}{, }\item[{int}]{left}{, }\item[{int}]{right}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{vec}{}\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{sorts_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{sorts_8cpp_source}{sorts.\+cpp}}.
+Придурковатая сортировка 
 
+Если элемент в начале списка больше, чем элемент в конце -\/ меняем их местами Если в текущем подмножестве списка более трех элементов, то рекурсивно вызывать сортировку относительно первых 2/3 списка затем относительно последних 2/3 списка, а потом опять относительно первых 2/3 списка
+\begin{DoxyParams}{Parameters}
+{\em arr} & -\/ массив из int, случайно распределенный\\
+\hline
+{\em left} & -\/ левая граница\\
+\hline
+{\em right} & -\/ правая граница\\
+\hline
+{\em vec} & -\/ вектор, хранящий все ходы сортировки, чтобы впоследствии их визуализировать \\
+\hline
+\end{DoxyParams}
