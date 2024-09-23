@@ -1,10 +1,8 @@
-#include <iostream>
-#include <list>
 #include <vector>
-
-// #include "C:\Users\USER\Documents\cloudfact\cpp_project_tests\sorts\sorts.h"
 #include "../sorts/sorts.h"
 #include <gtest/gtest.h>
+
+
 
 TEST(SortingTests, TestselectionSort)
 {

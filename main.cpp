@@ -12,7 +12,6 @@
 
 #include "sorts/sorts.h"
 // Рандомайзер
-#pragma region Randomizer
 /// \brief класс PRNG с генерацией ключа для алгоритма генерации псевдо
 /// случайных чисел \param seed - положительное целое число, по умолчанию: 0
 struct PRNG {
@@ -51,10 +50,7 @@ void peremeshka(int counter, PRNG &generator, std::vector<int> &random_out,
     counter--;
   }
 }
-#pragma endregion
 int main() {
-// Запуск функции рандомайзераб запись результата
-#pragma region RadomOn
   PRNG generator;
   initGenerator(generator);
 
@@ -73,9 +69,6 @@ int main() {
     numbers[counter1] = elem;
     counter1++;
   }
-#pragma endregion
-// Загрузка изображений и создание текстур
-#pragma region LoadImages
   using namespace sf;
   Image im[100];
   im[0].loadFromFile("../images/1.png");
@@ -178,9 +171,6 @@ int main() {
   im[97].loadFromFile("../images/98.png");
   im[98].loadFromFile("../images/99.png");
   im[99].loadFromFile("../images/100.png");
-#pragma endregion
-// Создание массива спрайтов из текстур
-#pragma region CreateStructuresOfSprites
 
   Texture arrayTextureS1[100];
   Texture arrayTextureS2[100];
@@ -244,9 +234,6 @@ int main() {
   for (int i = 0; i < 100; i++) {
     arraySprite[9][i].setTexture(arrayTextureS10[i]);
   }
-#pragma endregion
-// Инициализация и определение координат для спрайтов
-#pragma region SetCoordinatesForSprites
   Vector2u size = arrayTextureS1[0].getSize();
   double xx = size.x;
   double yy = size.y;
@@ -299,8 +286,6 @@ int main() {
       yMove -= 10 * yy;
     }
   }
-  double reservX = 0;
-  double reservY = 0;
   for (int i = 0; i < 100; i++) {
     listXS1[i] = listX[0][numbers[i]];
     listYS1[i] = listY[0][numbers[i]];
@@ -355,11 +340,6 @@ int main() {
     listXS9[i] = numbers[i];
     listXS10[i] = numbers[i];
   }
-#pragma endregion
-// Инициализация структур для хранения данных о процессе сортировки, запуск
-// функций сортировки
-#pragma region SortsOn
-  int counterQsort = 0;
   std::vector<std::pair<int, int>> iterS1;
   std::vector<std::pair<int, int>> iterS2;
   std::vector<std::pair<int, int>> iterS3;
@@ -377,13 +357,10 @@ int main() {
   gnome_sort(listXS5, 100, iterS5);
   quickSort(listXS6, 0, 99, iterS6);
   slow_sort(listXS7, 0, 99, iterS7);
-  // mergeSort(listXS8,0, 99, iterS8, iterS8Copy, listXS8Res, listYS8Res);
   stooge_sort(listXS8, 0, 99, iterS8);
   ShellSort(listXS9, 100, iterS9);
   odd_even_sort(listXS10, 100, iterS10);
-#pragma endregion
-// Визуализация сортировки
-#pragma region VisualisationOfSort
+
   float duration = float();
   Clock clock;
   Font font;
@@ -459,8 +436,6 @@ int main() {
   textS10.setStyle(sf::Text::Bold | sf::Text::Underlined);
   textS10.setPosition(75 + 16 * xx, 50 + 39 * yy);
 
-  // задаем позицию текста, центр камеры
-  // рисую этот текст
 
   RenderWindow Window(VideoMode(1500, 1000), "Animation");
   int i = 0;
@@ -574,5 +549,4 @@ int main() {
       }
     }
   }
-#pragma endregion
 }
