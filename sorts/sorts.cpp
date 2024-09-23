@@ -2,7 +2,7 @@
 #include <list>
 #include <vector>
 
-/// \brief Сортировка выбором
+// \brief Сортировка выбором
 /// \brief Выбираем минимальный элемент -> переносим его в начало
 /// \param arr - массив из int, случайно распределенный
 /// \param size - размер arr
@@ -18,7 +18,7 @@ void selectionSort(int *arr, int size, std::vector<std::pair<int, int>> &vec) {
       if (arr[j] < arr[min]) {
         min = j;
       }
-    }
+   }
     if (min == i)
       continue;
     std::swap(arr[i], arr[min]);
@@ -35,7 +35,7 @@ void insertSort(int *arr, int size, std::vector<std::pair<int, int>> &vec) {
     for (int j = i; j > 0 && arr[j - 1] > arr[j]; j--) {
       vec.emplace_back(j, j - 1);
       std::swap(arr[j - 1], arr[j]);
-    }
+   }
   }
 }
 /// \brief Сортировка пузырьком
@@ -44,7 +44,6 @@ void insertSort(int *arr, int size, std::vector<std::pair<int, int>> &vec) {
 /// из int, случайно распределенный \param size - размер arr \param vec -
 /// вектор, хранящий все ходы сортировки, чтобы впоследствии их визуализировать
 void bubbleSort(int *arr, int size, std::vector<std::pair<int, int>> &vec) {
-
   for (int i = 0; i < size - 1; ++i) // i - номер прохода
   {
     for (int j = 0; j < size - 1; ++j) // внутренний цикл прохода
@@ -54,11 +53,11 @@ void bubbleSort(int *arr, int size, std::vector<std::pair<int, int>> &vec) {
         std::swap(arr[j], arr[j + 1]);
       } else
         vec.emplace_back(1, -1);
-    }
+   }
   }
 }
 /// \brief Сортировка шейкером
-/// \brief Алгоритм очень похож на пузырек, но при завершении обхода списка этот
+// \brief Алгоритм очень похож на пузырек, но при завершении обхода списка этот
 /// алгоритм не начинает все время с одного и того же конца, как пузырёк, а
 /// ходит туда-сюда \param arr - массив из int, случайно распределенный \param
 /// size
@@ -77,7 +76,7 @@ void cocktailSort(int *arr, int size, std::vector<std::pair<int, int>> &vec) {
         flag = true;
       } else
         vec.emplace_back(1, -1);
-    }
+   }
     if (!flag) { // if nothing has changed simply break the loop
       break;
     }
