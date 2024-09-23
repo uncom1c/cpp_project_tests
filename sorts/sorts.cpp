@@ -18,7 +18,7 @@ void selectionSort(int *arr, int size, std::vector<std::pair<int, int>> &vec) {
       if (arr[j] < arr[min]) {
         min = j;
       }
-   }
+    }
     if (min == i)
       continue;
     std::swap(arr[i], arr[min]);
@@ -35,7 +35,7 @@ void insertSort(int *arr, int size, std::vector<std::pair<int, int>> &vec) {
     for (int j = i; j > 0 && arr[j - 1] > arr[j]; j--) {
       vec.emplace_back(j, j - 1);
       std::swap(arr[j - 1], arr[j]);
-   }
+    }
   }
 }
 /// \brief Сортировка пузырьком
@@ -44,16 +44,16 @@ void insertSort(int *arr, int size, std::vector<std::pair<int, int>> &vec) {
 /// из int, случайно распределенный \param size - размер arr \param vec -
 /// вектор, хранящий все ходы сортировки, чтобы впоследствии их визуализировать
 void bubbleSort(int *arr, int size, std::vector<std::pair<int, int>> &vec) {
-  for (int i = 0; i < size - 1; ++i) // i - номер прохода
+  for (int i = 0; i < size - 1; ++i)
   {
-    for (int j = 0; j < size - 1; ++j) // внутренний цикл прохода
+    for (int j = 0; j < size - 1; ++j)
     {
       if (arr[j + 1] < arr[j]) {
         vec.emplace_back(j, j + 1);
         std::swap(arr[j], arr[j + 1]);
       } else
         vec.emplace_back(1, -1);
-   }
+    }
   }
 }
 /// \brief Сортировка шейкером
@@ -68,21 +68,21 @@ void cocktailSort(int *arr, int size, std::vector<std::pair<int, int>> &vec) {
   int start = 0, end = size - 1;
   while (flag) {
     flag = false;
-    for (int i = start; i < end; i++) { // scan from left to right as bubble
-                                        // sort
+    for (int i = start; i < end; i++) {
+                                      
       if (arr[i] > arr[i + 1]) {
         vec.emplace_back(i, i + 1);
         std::swap(arr[i], arr[i + 1]);
         flag = true;
       } else
         vec.emplace_back(1, -1);
-   }
-    if (!flag) { // if nothing has changed simply break the loop
+    }
+    if (!flag) {
       break;
     }
     flag = false;
-    end--;                                   // decrease the end pointer
-    for (int i = end - 1; i >= start; i--) { // scan from right to left
+    end--;     
+    for (int i = end - 1; i >= start; i--) { 
       if (arr[i] > arr[i + 1]) {
         vec.emplace_back(i, i + 1);
         std::swap(arr[i], arr[i + 1]);
@@ -217,7 +217,7 @@ void stooge_sort(int *arr, int left, int right,
 }
 
 /// \brief Медленная сортировка
-/// \brief 
+/// \brief
 /// \param arr - массив из int, случайно распределенный
 /// \param left - левая граница
 /// \param right - правая граница
@@ -241,11 +241,11 @@ void slow_sort(int *arr, int left, int right,
 }
 
 /// \brief Четная-нечетная сортировка
-/// \brief 
-/// \param arr - массив из int, случайно распределенный
-/// \param size - размер arr
-/// \param vec - вектор, хранящий все ходы сортировки, чтобы впоследствии их
-/// визуализировать
+/// \brief Проходит сначала по нечетным элементам, сравнивая каждый со
+/// следующим. Если не в порядке, то меняем местами. Потом такой же проход по
+/// нечетным \param arr - массив из int, случайно распределенный \param size -
+/// размер arr \param vec - вектор, хранящий все ходы сортировки, чтобы
+/// впоследствии их визуализировать
 void odd_even_sort(int *arr, int size, std::vector<std::pair<int, int>> &vec) {
   bool is_sorted = false;
   while (!is_sorted) {
@@ -269,5 +269,4 @@ void odd_even_sort(int *arr, int size, std::vector<std::pair<int, int>> &vec) {
       }
     }
   }
-  return;
 }
